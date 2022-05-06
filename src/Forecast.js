@@ -1,39 +1,38 @@
 import React, { useState, useEffect } from "react";
-import "./WeatherForecast.css";
+import ForecastDay from "./ForecastDay";
 import axios from "axios";
-import WeatherForecastDay from "./WeatherForecastDay";
+import "./Forecast.css";
 
-export default function WeatherForecast(props) {
+export default function Forecast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecast, setForecast] = useState(null);
 
   useEffect(() => {
     setLoaded(false);
-  }, [props.coordinates]);
+  }, [props.coord]);
 
   function handleResponse(response) {
     setForecast(response.data.daily);
     setLoaded(true);
   }
 
-  function load() {
-    let apiKey = "5f0a8a4c8b060e28a38c0762d7bac88e";
-    let longitude = props.coordinates.lon;
-    let latitude = props.coordinates.lat;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  if (!loaded) {
+    const apiKey = "5f0a8a4c8b060e28a38c0762d7bac88e";
+    let latitude = props.coord.lat;
+    let longitude = props.coord.lon;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly,alerts&units=metric&appid=${apiKey}`;
 
     axios.get(apiUrl).then(handleResponse);
-  }
-
-  if (loaded) {
+    return null;
+  } else {
     return (
-      <div className="WeatherForecast">
+      <div className="Forecast">
         <div className="row">
-          {forecast.map(function (dailyForecast, index) {
-            if (index < 5) {
+          {forecast.map((forecastDay, index) => {
+            if (index > 0 && index < 7) {
               return (
                 <div className="col" key={index}>
-                  <WeatherForecastDay data={dailyForecast} />
+                  <ForecastDay data={forecastDay} />
                 </div>
               );
             } else {
@@ -43,9 +42,5 @@ export default function WeatherForecast(props) {
         </div>
       </div>
     );
-  } else {
-    load();
-
-    return null;
   }
 }

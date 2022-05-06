@@ -1,16 +1,21 @@
 .App {
-  max-width: 700px;
   margin: 30px auto;
+  color: #212529;
+  font-family: sans-serif;
+  max-width: 600px;
   background-image: url("https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
 }
 
-.App footer {
-  font-size: 11px;
-  margin: 10px 0;
-  text-align: center;
+.App a {
+  color: #ec6e4c;
+  text-decoration: none;
 }
-.bg-image {
-  background-image: url("https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-  background-position: center;
-  background-repeat: no-repeat;
+
+.App footer {
+  font-size: 12px;
+  text-align: left;
+  line-height: 15px;
+  margin: 5px;
+  padding: 0;
+  text-align: center;
 }
