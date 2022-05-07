@@ -1,11 +1,12 @@
 .Forecast {
   text-align: center;
-  font-size: 12px;
-  padding: 12px;
-  margin-top: 5px;
-  color: #48484a;
+  font-size: 19px;
+  padding: 15px;
+  margin-top: 10px;
+  color: black;
 }
 
 .Forecast-temp-min {
-  opacity: 0.6;
+  font-size: 15px;
+  opacity: 0.9;
 }

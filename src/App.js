@@ -1,5 +1,5 @@
 import React from "react";
-import Weather from "./Weather";
+import Search from "./Search";
 import "./App.css";
 
 export default function App() {
@@ -7,7 +7,7 @@ export default function App() {
     <div class="bg-image">
       <div className="App">
         <div className="container">
-          <Weather defaultCity="Simferopol" />
+          <Search defaultCity="Simferopol" />
           <footer>
             This project was coded by{" "}
             <a

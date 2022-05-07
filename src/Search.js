@@ -50,16 +50,13 @@ export default function Search(props) {
             <input
               type="search"
               className="form-control"
-              placeholder="Enter a city"
+              placeholder="Enter your city..."
               onChange={handleUpdateCity}
               autoFocus="on"
             />
-            <button className="btn btn-outline-secondary" type="submit">
-              Search
+            <button className="btn" type="submit">
+              <strong>Search</strong>
             </button>
-            {/* <button className="btn btn-outline-secondary" type="submit">
-							Current
-						</button> */}
           </div>
         </form>
 

@@ -19,7 +19,7 @@ export default function Weather(props) {
               <WeatherIcon
                 iconID={props.data.iconID}
                 alt={props.data.description}
-                width={64}
+                width={80}
               />
             </div>
             <div className="float-left">

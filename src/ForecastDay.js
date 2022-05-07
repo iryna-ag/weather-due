@@ -14,7 +14,7 @@ export default function ForecastDay(props) {
       <WeatherIcon
         iconID={props.data.weather[0].icon}
         alt={props.data.weather[0].description}
-        width={36}
+        width={46}
       ></WeatherIcon>
       <div className="Forecast-div">
         <span className="Forecast-temp-max">
